@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/map-geolocalization-component.esm.js"></script>
+    <script nomodule src="/build/map-geolocalization-component.js"></script>
+  </head>
+  <body>
+  <input type="text" class="js-trigger" value="co"/>
+  <web-countries-finder keyword="united" class="js-target-countries" ></web-countries-finder>
+    <script>
+      (function() {
+          let $input =  document.querySelector(".js-trigger");
+          let $countries =  document.querySelector(".js-target-countries");
+          $input.addEventListener('input', function(){
+              console.log('Keyboard: ' + $input.value);
+              $countries.keyword = $input.value
+          });
+        })();
+    </script>
+  </body>
+</html>
